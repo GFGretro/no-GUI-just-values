@@ -1,0 +1,73 @@
+class PS4Controller:
+    def __init__(self):
+        # Initialize default settings for left stick
+        self.left_stick = {
+            'sensitivity': 1.0,
+            'dead_zone': 0.00,
+            'inner_dead_zone': 0.02,
+            'inner_threshold': 0.02,
+            'outer_threshold': 1.00,  # Added outer threshold setting for left stick
+            'invert_axis': False,
+            'axial_dead_zones': {'x': 0.00, 'y': 0.00},
+            'acceleration': 1.0,
+            'rotation_sensitivity': 1.0,
+            'smoothing': True,
+            'inertial_damping': 0.0,
+            'custom_presets': {},
+            'acceleration_curve': 'linear',
+            'sensitivity_profiles': {'default': {'x': 1.0, 'y': 1.0}},
+            'dead_zone_shape': 'Circular',  # Changed to Circular
+            'auto_centering': True,
+            'smooth_transition': True,
+        }
+
+        # Initialize default settings for the right stick
+        self.right_stick = {
+            'sensitivity': 1.0,
+            'dead_zone': 0.00,
+            'inner_dead_zone': 0.02,
+            'inner_threshold': 0.02,
+            'outer_threshold': 1.00,  # Added outer threshold setting for right stick
+            'invert_axis': False,
+            'axial_dead_zones': {'x': 0.00, 'y': 0.00},
+            'acceleration': 1.0,
+            'rotation_sensitivity': 1.0,
+            'smoothing': True,
+            'inertial_damping': 0.0,
+            'custom_presets': {},
+            'acceleration_curve': 'linear',
+            'sensitivity_profiles': {'default': {'x': 1.0, 'y': 1.0}},
+            'dead_zone_shape': 'Circular',  # Changed to Circular
+            'auto_centering': True,
+            'smooth_transition': True,
+        }
+
+        self.custom_mappings = {'L3': None, 'R3': None}
+        self.button_configuration = {}
+        self.legacy_support = False
+
+        # Set the vibration intensity for the left and right motors (0 to 255)
+        left_intensity = 127.5
+        right_intensity = 127.5
+        # Set the vibration duration in milliseconds
+        duration = 1.00
+        # Set the vibration frequency in hertz
+        frequency = 40
+        # Call the set_vibration method with the parameters
+        self.set_vibration(left_intensity, right_intensity, duration, frequency)
+
+    # ... (other methods remain the same)
+
+    def set_vibration(self, left_intensity, right_intensity, duration, frequency):
+        # This method should set vibration settings for the controller
+        # Implement the functionality here
+        pass
+
+
+# Example usage:
+ps4_controller = PS4Controller()
+
+# Accessing settings
+print(f"Left Stick Dead Zone: {ps4_controller.left_stick['dead_zone']}")
+print(f"Right Stick Dead Zone: {ps4_controller.right_stick['dead_zone']}")
+# Add other settings as needed...
